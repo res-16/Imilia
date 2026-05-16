@@ -4,20 +4,20 @@ const path = require("path");
 
 module.exports = {
   config: {
-    name: "emojimix",
+    name: " دمج الاموجي",
     aliases: ["mix"],
     version: "1.0.1",
     author: "Shaon Ahmed",
     role: 0,
     shortDescription: {
-      en: "Mix two emojis"
+      ar: "تم الدمج"
     },
     longDescription: {
       en: "Mix two emojis into one image"
     },
     category: "fun",
     guide: {
-      en: "{p}mix 😄 😍"
+      ar: "{p}دمج 😄 😍"
     }
   },
 
