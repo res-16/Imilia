@@ -10,15 +10,15 @@ const mahmud = async () => {
 };
 
 /**
- * @author MahMUD
+ * @author marven
  * @author: do not delete it
  */
 
 module.exports = {
   config: {
-    name: "kiss",
+    name: "بوسه",
     version: "1.7",
-    author: "MahMUD",
+    author: "مارفن",
     countDown: 5,
     role: 0,
     longDescription: "Generate anime-style kiss image",
@@ -39,13 +39,13 @@ module.exports = {
 
       const mention = Object.keys(event.mentions);
       if (mention.length === 0) {
-        return message.reply("Please mention someone to kiss 💋");
+        return message.reply("اذكر مز تريد تقبيله 💋");
       }
 
       const senderID = event.senderID;
       const targetID = mention[0];
 
-      const base = await mahmud();
+      const base = await marven();
       const apiURL = `${base}/api/kiss`;
 
       const response = await axios.post(
@@ -71,7 +71,7 @@ module.exports = {
 
     } catch (err) {
       console.error("Error in kiss command:", err.message || err);
-      message.reply("🥹 error, contact MahMUD.");
+      message.reply("🥹 , فشل التقبيل انت خريه .");
     }
   }
 };
