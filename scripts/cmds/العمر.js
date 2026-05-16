@@ -16,7 +16,7 @@ module.exports = {
     try {
       if (!args.length) {
         return api.sendMessage(
-          "⚠️ Uꜱᴇ:\n• age 2007\n• age 01/05/2007\n• age 3 May 2007\n• age 3/may/2007",
+          "شدخني بعمرج؟",
           event.threadID
         );
       }
