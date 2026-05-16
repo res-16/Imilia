@@ -4,7 +4,7 @@ const path = require("path");
 
 module.exports = {
   config: {
-    name: "blur",
+    name: "ضبابيه",
     version: "1.0",
     author: "MOHAMMAD AKASH",
     countDown: 10,
