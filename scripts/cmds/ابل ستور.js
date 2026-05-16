@@ -3,7 +3,7 @@ const { getStreamFromURL } = global.utils;
 
 module.exports = {
 	config: {
-		name: "appstore",
+		name: "ابل ستور",
 		version: "1.2",
 		author: "NTKhang",
 		countDown: 5,
