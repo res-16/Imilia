@@ -10,7 +10,7 @@ const mahmud = async () => {
 };
 
 /**
- * @author marven
+ * @author mahmud
  * @author: do not delete it
  */
 
@@ -18,7 +18,7 @@ module.exports = {
   config: {
     name: "بوسه",
     version: "1.7",
-    author: "مارفن",
+    author: "mahmud",
     countDown: 5,
     role: 0,
     longDescription: "Generate anime-style kiss image",
