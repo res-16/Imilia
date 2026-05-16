@@ -2,10 +2,10 @@ const moment = require("moment-timezone");
 
 module.exports = {
   config: {
-    name: "age",
+    name: "العمر",
     aliases: ["myage"],
     version: "6.0",
-    author: "𝐌𝐨𝐡𝐚ᴍᴍᴀᴅ 𝐀ᴋᴀsʜ",
+    author: "مارفن",
     role: 0,
     category: "AI",
     guide: "age <YYYY | DD/MM/YYYY | D Month YYYY | D/Month/YYYY>",
