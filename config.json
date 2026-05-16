@@ -114,8 +114,8 @@
     },
     "telegram": {
       "enable": false,
-      "botToken": "7917864172:AAHSIP-2Bzi6kMVgkPu3Q2As1jgYqaho3YM",
-      "chatId": "https://t.me/cotinho_bot"
+      "botToken": "",
+      "chatId": ""
     },
     "discordHook": {
       "enable": false,
