@@ -13,7 +13,7 @@
   "language": "ar",
   "notesLanguage": "change language using ISO 639-1 code",
   "nickNameBot": "—͞ سمبوسه 🎀❤️‍🩹",
-  "prefix": "/",
+  "prefix": ".",
   "adminOnly": {
     "enable": false,
     "ignoreCommand": []
