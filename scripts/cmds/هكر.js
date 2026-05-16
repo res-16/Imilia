@@ -4,7 +4,7 @@ const { loadImage, createCanvas } = require("canvas");
 
 module.exports = {
   config: {
-    name: "hack",
+    name: "هكر",
     version: "1.0.0",
     author: "NAZRUL (Converted by Akash)",
     countDown: 0,
@@ -104,7 +104,7 @@ module.exports = {
       fs.writeFileSync(bgPath, finalBuffer);
 
       await message.reply({
-        body: "😎 হ্যাক সম্পূর্ণ!",
+        body: "☠️ تم تهكير حسابك!",
         attachment: fs.createReadStream(bgPath)
       });
 
