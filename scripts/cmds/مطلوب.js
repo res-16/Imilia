@@ -18,7 +18,7 @@ const toEnglishName = (name) => {
 
 module.exports = {
   config: {
-    name: "wanted",
+    name: "مطلوب",
     version: "1.1",
     author: "MOHAMMAD AKASH",
     countDown: 5,
