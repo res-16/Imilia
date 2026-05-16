@@ -4,7 +4,7 @@ const path = require("path");
 
 module.exports = {
   config: {
-    name: " دمج الاموجي",
+    name: " دمج",
     aliases: ["mix"],
     version: "1.0.1",
     author: "Shaon Ahmed",
