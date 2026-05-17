@@ -1,6 +1,6 @@
 module.exports.config = {
  name: "quranquiz",
- aliases: ["قرآن", "quiz"],
+ aliases: ["mslm", "quiz"],
  version: "1.0",
  author: "MOHAMMAD AKASH + modified",
  countDown: 5,
