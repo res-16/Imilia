@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports.config = {
-  name: "time",
+  name: "الوقت",
   version: "11.0",
   author: "MOHAMMAD AKASH",
   countDown: 5,
