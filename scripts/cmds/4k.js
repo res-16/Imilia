@@ -6,8 +6,8 @@ const mahmud = async () => {
 };
 
 /**
-* @author MahMUD
-* @author: do not delete it
+* المطور: MahMUD
+* رجاءً لا تحذف الحقوق
 */
 
 module.exports = {
@@ -18,58 +18,85 @@ module.exports = {
     countDown: 10,
     role: 0,
     category: "AI",
-    description: "Enhance or restore image quality using 4k AI.",
+    description: "تحسين جودة الصور أو ترميمها باستخدام ذكاء اصطناعي 4K.",
     guide: {
-      en: "{pn} [url] or reply with image"
+      en: "{pn} [رابط الصورة] أو قم بالرد على صورة"
     }
   },
 
   onStart: async function ({ message, event, args }) {
-    
-    const obfuscatedAuthor = String.fromCharCode(77, 97, 104, 77, 85, 68); 
+
+    // التحقق من عدم تغيير اسم المطور
+    const obfuscatedAuthor = String.fromCharCode(77, 97, 104, 77, 85, 68);
+
     if (module.exports.config.author !== obfuscatedAuthor) {
-      return api.sendMessage("You are not authorized to change the author name.", event.threadID, event.messageID);
+      return api.sendMessage(
+        "غير مسموح لك بتغيير اسم المطور.",
+        event.threadID,
+        event.messageID
+      );
     }
+
     const startTime = Date.now();
     let imgUrl;
 
+    // إذا المستخدم رد على صورة
     if (event.messageReply?.attachments?.[0]?.type === "photo") {
       imgUrl = event.messageReply.attachments[0].url;
     }
 
+    // إذا وضع رابط صورة
     else if (args[0]) {
       imgUrl = args.join(" ");
     }
 
+    // إذا ما أرسل صورة أو رابط
     if (!imgUrl) {
-      return message.reply("Baby, Please reply to an image or provide an image URL");
+      return message.reply("يرجى الرد على صورة أو إرسال رابط صورة.");
     }
-  
-    const waitMsg = await message.reply("𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝟒𝐤 𝐢𝐦𝐚𝐠𝐞...𝐰𝐚𝐢𝐭 𝐛𝐚𝐛𝐲 <😘");
+
+    // رسالة الانتظار
+    const waitMsg = await message.reply("⏳ جاري تحسين الصورة إلى 4K... انتظر قليلاً");
+
     message.reaction("😘", event.messageID);
 
     try {
-      
+
+      // رابط API
       const apiUrl = `${await mahmud()}/api/hd?imgUrl=${encodeURIComponent(imgUrl)}`;
 
-      const res = await axios.get(apiUrl, { responseType: "stream" });
-      if (waitMsg?.messageID) message.unsend(waitMsg.messageID);
+      // جلب الصورة المحسنة
+      const res = await axios.get(apiUrl, {
+        responseType: "stream"
+      });
+
+      // حذف رسالة الانتظار
+      if (waitMsg?.messageID) {
+        message.unsend(waitMsg.messageID);
+      }
 
       message.reaction("✅", event.messageID);
 
+      // حساب وقت المعالجة
       const processTime = ((Date.now() - startTime) / 1000).toFixed(2);
 
+      // إرسال الصورة
       message.reply({
-        body: `✅ | 𝐇𝐞𝐫𝐞'𝐬 𝐲𝐨𝐮𝐫 𝟒𝐤 𝐢𝐦𝐚𝐠𝐞 𝐛𝐚𝐛𝐲`,
+        body: `✅ تم تحسين الصورة بنجاح إلى جودة 4K\n⏱️ الوقت: ${processTime} ثانية`,
         attachment: res.data
       });
 
     } catch (error) {
-  
-      if (waitMsg?.messageID) message.unsend(waitMsg.messageID);
+
+      // حذف رسالة الانتظار
+      if (waitMsg?.messageID) {
+        message.unsend(waitMsg.messageID);
+      }
 
       message.reaction("❎", event.messageID);
-      message.reply(`🥹error baby, contact MahMUD.`);
+
+      // رسالة الخطأ
+      message.reply("حدث خطأ أثناء معالجة الصورة، تواصل مع المطور.");
     }
   }
 };
