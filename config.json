@@ -1,7 +1,7 @@
 {
   "facebookAccount": {
-    "email": "madaraochiha100@gmail.com",
-    "password": "thekingmarven123",
+    "email": "",
+    "password": "",
     "2FASecret": "",
     "i_user": "",
     "proxy": null,
@@ -55,7 +55,7 @@
   "timeZone": "Asia/Dhaka",
   "credentials": {
     "gmailAccount": {
-      "email": "madaraochiha100@gmail.com",
+      "email": "",
       "clientId": "848792512039-g3mlfd39p9ttu82ga4kahk6kadjr0hcp.apps.googleusercontent.com",
       "clientSecret": "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",
       "refreshToken": " ",
